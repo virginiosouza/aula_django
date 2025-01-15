@@ -1,8 +1,15 @@
 from django.shortcuts import render
 
 
-def index(Request):
-    return render(Request, 'galeria\index.html')
+def index(request):
+    dados = {
+    1: {"nome":"Nebulosa de Carina",
+        "legenda":"webbtelescope.org / NASA / James Webb"},
+    2: {"nome":"Galáxia NGC 1079",
+        "legenda":"nasa.org / NASA / Hubble"}
+    }#dicionário
+
+    return render(request, 'galeria\index.html', {"cards": dados})
 
 def imagem(request):
         return render(request, 'galeria/imagem.html')
